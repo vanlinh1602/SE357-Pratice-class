@@ -1,0 +1,25 @@
+@startuml QL nhanvien
+
+start
+:Login;
+:Quan ly nhan vien;
+:Xem list nhan vien;
+fork
+:Add nhan vien;
+:Nhap thong tin nhan vien;
+
+fork again
+:Chon nhan vien;
+:Delete nhan vien;
+
+fork again
+:Chon nhan vien ;
+:Edit thong tin nhan vien;
+
+end merge
+if (Valid?) then (Yes)
+:Action done successfully;
+stop
+else (No)
+:Show error message;
+stop

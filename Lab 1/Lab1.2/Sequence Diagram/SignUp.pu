@@ -1,0 +1,35 @@
+@startuml signup
+
+actor Customer 
+boundary SignUpView 
+control SignUpControl
+entity Account
+
+SignUpView -> SignUpView: 1. Display Sign Up View
+Customer -> SignUpView: 2. Click "Sign Up" button
+SignUpView -> SignUpView: 3. Load Sign Up Form
+Customer -> SignUpView: 4. Enter info
+Customer -> SignUpView: 5. Click "Confirm" button
+SignUpView -> SignUpView : 6. Display validate format
+
+alt Invalid Data
+    SignUpView -> SignUpView : 7. Display error notification
+
+else Valid Data
+    SignUpView -> SignUpControl: 8. Send username and password
+    SignUpControl -> Account: 9. Send username and password
+    Account -> Account: 10. Validate information
+
+    alt Invalid Information
+        Account --> SignUpControl: 11. Error notification
+        SignUpControl -> SignUpView: 12. Display error notification
+
+    else Valid Information
+        Account --> SignUpControl: 13. Successful message
+        SignUpControl -> SignUpView: 14. Successful notification
+    end
+
+end
+
+
+@enduml

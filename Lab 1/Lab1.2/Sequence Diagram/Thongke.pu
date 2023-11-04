@@ -1,0 +1,24 @@
+@startuml Thong ke doanh thu
+
+actor Actor 
+boundary StatisticView 
+database Database 
+
+StatisticView  --> Database: 1.Get overal statistic
+StatisticView  --> StatisticView : 2.Display statistic banner
+Actor --> StatisticView : 3.Choose style to see statistic
+
+opt FilterStatisticbyName:
+    ref over Actor, StatisticView , Database: Sequence Insert New customer
+end   
+
+opt CompareStatistic:
+    ref over Actor, StatisticView , Database: Sequence Delete customer
+end
+
+opt ShowStatisticbyTime:
+    ref over Actor, StatisticView , Database: Sequence Edit customer Info
+end   
+ 
+
+@enduml

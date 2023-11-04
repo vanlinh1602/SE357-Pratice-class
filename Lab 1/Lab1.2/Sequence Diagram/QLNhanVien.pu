@@ -1,0 +1,27 @@
+@startuml QL nhan vien
+
+actor Actor 
+boundary StaffManageView 
+database Database 
+
+StaffManageView --> Database: 1.Get list of staff
+StaffManageView --> StaffManageView: 2.Display list of staff
+Actor --> StaffManageView: 3.Choose action
+
+opt AddNewStaff:
+    ref over Actor, StaffManageView, Database: Sequence Insert New Staff
+end   
+
+opt DeleteStaff:
+    ref over Actor, StaffManageView, Database: Sequence Delete Staff
+end
+
+opt EditStaffInfo:
+    ref over Actor, StaffManageView, Database: Sequence Edit Staff Info
+end   
+
+opt SearchStaff:
+    ref over Actor, StaffManageView, Database: Sequence Search Staff
+end  
+
+@enduml

@@ -1,0 +1,27 @@
+@startuml Thong ke doanh thu
+
+start
+:Login;
+:Nhap san pham vao gio hang;
+:Ban hang;
+fork
+:Xuat hoa don cho khach;
+
+fork again
+:So sanh thong ke;
+:Tinh muc do chenh lech thong ke;
+
+fork again
+:Luu thong tin khach hang;
+
+fork again
+:Tiep nhan voucher/khuyen mai;
+:Xac nhan khuyen mai;
+
+end merge
+if (Valid?) then (Yes)
+:Action done successfully;
+stop
+else (No)
+:Show error message;
+stop

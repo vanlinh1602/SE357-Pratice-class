@@ -1,0 +1,22 @@
+@startuml Xem tim san pham
+
+actor Actor 
+boundary BrowseProductView 
+database Database 
+
+BrowseProductView  --> Database: 1.Get list of customer
+BrowseProductView  --> BrowseProductView : 2.Display list of customer
+Actor --> BrowseProductView : 3.Input product name to search
+alt Invalid Keyword
+    BrowseProductView --> Database: 4.Find if product available
+    BrowseProductView -> Actor : 5. Display not found notification
+else Valid Keyword
+    Database -> BrowseProductView: 6. Product exist
+    BrowseProductView -> Database: 7. Send product's keywords
+    Database -> Database: 8. Validate keyword
+    Database --> BrowseProductView: 9. Successful notification
+    BrowseProductView -> Actor: 10. Send message
+    BrowseProductView -> BrowseProductView: 11. Display product with keywords
+end
+ 
+@enduml

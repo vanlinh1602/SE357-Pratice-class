@@ -1,0 +1,27 @@
+@startuml QL khach hang
+
+actor Actor 
+boundary CustomerManageView 
+database Database 
+
+CustomerManageView  --> Database: 1.Get list of customer
+CustomerManageView  --> CustomerManageView : 2.Display list of customer
+Actor --> CustomerManageView : 3.Choose action
+
+opt AddNewStaff:
+    ref over Actor, CustomerManageView , Database: Sequence Insert New customer
+end   
+
+opt DeleteStaff:
+    ref over Actor, CustomerManageView , Database: Sequence Delete customer
+end
+
+opt EditStaffInfo:
+    ref over Actor, CustomerManageView , Database: Sequence Edit customer Info
+end   
+
+opt SearchStaff:
+    ref over Actor, CustomerManageView , Database: Sequence Search customer
+end  
+
+@enduml

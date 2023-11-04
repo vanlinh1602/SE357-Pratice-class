@@ -1,0 +1,27 @@
+@startuml Thong ke doanh thu
+
+start
+:Login;
+:Thong ke doanh thu;
+:Xem bang thong ke tong;
+fork
+:Chon noi dung muon thong ke;
+:Nhap thong tin lien quan;
+
+fork again
+:So sanh thong ke;
+:Tinh muc do chenh lech thong ke;
+
+fork again
+:Thong ke theo moc thoi gian;
+:Xem toan bo moc thoi gian;
+
+fork again
+:Sap xep cac bang thong ke theo tung muc;
+end merge
+if (Valid?) then (Yes)
+:Action done successfully;
+stop
+else (No)
+:Show error message;
+stop

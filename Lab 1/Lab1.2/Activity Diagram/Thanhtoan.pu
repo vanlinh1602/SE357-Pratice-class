@@ -1,0 +1,20 @@
+@startuml Thanh toan
+
+start
+:Vao gio hang;
+:Xem gio hang;
+
+fork
+:Edit gio hang;
+
+fork again
+:Huy gio hang;
+
+end merge
+if (Valid?) then (Yes)
+:Nhap thong tin ca nhan;
+:Thanh toan;
+stop
+else (No)
+:Show error message;
+stop

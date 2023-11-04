@@ -1,0 +1,27 @@
+@startuml QL cua hang
+
+actor Actor 
+boundary StoreManageView 
+database Database 
+
+StoreManageView --> Database: 1.Get list of store
+StoreManageView --> StoreManageView: 2.Display list of store
+Actor --> StoreManageView: 3.Choose action
+
+opt AddNewStaff:
+    ref over Actor, StoreManageView, Database: Sequence Insert New store
+end   
+
+opt DeleteStaff:
+    ref over Actor, StoreManageView, Database: Sequence Delete store
+end
+
+opt EditStaffInfo:
+    ref over Actor, StoreManageView, Database: Sequence Edit Staff store
+end   
+
+opt SearchStaff:
+    ref over Actor, StoreManageView, Database: Sequence Search store
+end  
+
+@enduml

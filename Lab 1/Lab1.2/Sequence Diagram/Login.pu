@@ -1,0 +1,26 @@
+@startuml Login
+
+actor User 
+boundary LoginView 
+control LoginControl
+entity Account 
+
+LoginView -> LoginView : 1. Display LogIn View
+User -> LoginView : 2. Enter account and click "login" button
+LoginView -> LoginView : 3. Display validate format
+
+alt Invalid Data
+    LoginView -> LoginView : 4. Display error notification
+else Valid Data
+    LoginView -> LoginControl: 5. Send username and password
+    LoginControl -> Account: 6. Send username and password
+    Account -> Account: 7. Validate data
+    alt Invalid Data
+        Account --> LoginControl: 8. Error notification
+        LoginControl -> LoginView: 9. Display error notification
+    else Valid Data
+        Account --> LoginControl: 10. Successful notification
+        LoginControl -> LoginView: 11. Close LogIn View
+    end
+end
+@enduml

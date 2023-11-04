@@ -1,0 +1,25 @@
+@startuml QL khachhang
+
+start
+:Login;
+:Quan ly khach hang;
+:Xem list khach hang;
+fork
+:Add khach hang;
+:Nhap thong tin khach hang;
+
+fork again
+:Chon khach hang;
+:Delete khach hang;
+
+fork again
+:Chon khach hang;
+:Edit thong tin khach hang;
+
+end merge
+if (Valid?) then (Yes)
+:Action done successfully;
+stop
+else (No)
+:Show error message;
+stop

@@ -1,0 +1,32 @@
+@startuml add product
+
+actor ShopManager 
+boundary ProductManageView 
+control ProductControl
+entity Product 
+
+ProductControl -> Product: 1. Get list of Products
+ProductManageView -> ProductManageView: 2. Display list of Products
+ShopManager -> ProductManageView: 3. Click "Import Product" button
+ProductManageView -> ProductManageView: 4. Load Input Form
+ShopManager -> ProductManageView: 5. Enter product's information and its supplier
+ProductManageView -> ProductManageView: 6. Show "Confirm Import" message
+
+alt Click "Yes" Button
+    ShopManager -> ProductManageView: 14. Click Yes
+    ProductManageView -> ProductControl: 15. Send message to Control
+    alt Valid Information
+        ProductControl -> Product: 16. Import new Product
+        ProductControl -> ProductManageView: 16. Change status to pending
+        ProductManageView -> ProductManageView: 17. Show successful notification
+    else Invalid Information
+        ProductControl -> ProductManageView: 17. Send error message
+        ProductManageView -> ProductManageView: 18. Show error notification
+
+    end
+else Click "No" Button
+    ProductManageView -> ProductManageView: 19. Show notification
+end
+
+
+@enduml

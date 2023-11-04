@@ -1,0 +1,25 @@
+@startuml QL cuahang
+
+start
+:Login;
+:Quan ly cua hang;
+:Xem list cua hang;
+fork
+:Add cua hang;
+:Nhap thong tin cua hang;
+
+fork again
+:Chon cua hang;
+:Delete cua hang;
+
+fork again
+:Chon cua hang;
+:Edit thong tin cua hang;
+
+end merge
+if (Valid?) then (Yes)
+:Action done successfully;
+stop
+else (No)
+:Show error message;
+stop

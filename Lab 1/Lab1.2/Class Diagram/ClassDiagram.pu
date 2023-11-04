@@ -1,0 +1,139 @@
+@startuml
+@startuml ClassDiagram 
+
+
+rectangle "ClassDiagram" {
+   class User {
+      +userId: string
+      +userRoleId: string
+      +name: string
+      +adddress: string
+      +phone: int
+      +email: string
+      +userPassword: string
+      +loginStatus: string
+      +typeOfUser: string
+      addUser()
+      deleteUser()
+      editUserInfo()
+      searchUser()
+   }
+   
+
+   class Role {
+      +roleId: string
+      +roleTitle: string
+      +roleDescription: string
+      addRole()
+      deleteRole()
+      editRole()
+      searchRole()
+   }
+
+   class Rolename {
+      Admin 
+      ShopManager
+      Customer 
+      Nhanvien
+   }
+
+   class Permission {
+      +permission_id: int
+      +permissiion_role_id: int
+      +permission_title: string
+      +permission_description: string
+      addPermission()
+      deletePermission
+      editPermission()
+   }
+
+
+   class Product {
+      +productId: string
+      +productName: string
+      +typeProduct: string
+      +weight: int
+      +status: string
+      searchProduct()
+      addProduct()
+      deleteProduct()
+      editProduct()
+   } 
+
+   class Stock {
+      +stock_id: string
+      +date_import: string
+      +date_export: string
+      +userId: string
+      +goodStatus: string
+      addStock()
+      deleteStock()
+      editStock()
+   }
+
+   class StockDetail {
+      +stock_id: string
+      +productId: string
+      +productName: string
+      +quantity: int
+      +description: string
+      +cost: float
+   }
+
+
+   class Shop {
+      +shopId: string
+      +shopName: string
+      +address: string
+      +shop_description: string
+      addShop()
+      editShopInfo()
+      deleteShop()
+      searchShop()
+   }
+
+   class Bill {
+      +bill_id: int
+      +bill_type: string
+      +bill_description: string
+      +bill_number: string
+      +bill_customer_id: int
+      addBill()
+      editBill()
+      deleteBill()
+      searchBill()
+   }
+
+   class Customer {
+      +customer_id: int
+      +customer_name: int
+      +customer_phone: string
+      +customer_email: string
+      +customer_address: string
+      +customer_username: string
+      +customer_password: string
+      addCustomer()
+      editCustomer()
+      deleteCustomer()
+      searchCustomer()
+   }
+
+   User "1..*" --|> "1..*" Role
+   User --|> Permission
+
+   Stock --o Permission
+   Product --o Permission
+   Shop --o Permission
+   Bill --o Permission
+   Customer --o Permission
+
+   StockDetail "n..*" --|> "1..*" Stock
+   
+
+   Customer "1..*" - "n..*" Bill
+   Shop "1..*" - "n..*" User
+   Stock "n..*" <|- "1..*" Shop
+   Product "1..*" --|> "n..*" Bill
+
+}
+@enduml

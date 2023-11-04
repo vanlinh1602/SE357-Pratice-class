@@ -1,0 +1,14 @@
+@startuml BanHang
+
+actor Actor 
+boundary BanHangScreen 
+database Database 
+
+Actor --> BanHangScreen: 1.Click button "Gio hang"
+BanHangScreen  --> Database: 2.Get "Gio hang" info
+BanHangScreen  --> BanHangScreen : 3.Display "Gio hang" items
+Actor --> BanHangScreen : 4.Click button " thanh toan"
+BanHangScreen --> Database: 5.Save product bought
+BanHangScreen --> Actor: 6.Print Bill
+
+@enduml

@@ -1,0 +1,25 @@
+@startuml QL khuyenmai
+
+start
+:Login;
+:Quan ly khuyen mai;
+:Xem list khuyen mai;
+fork
+:Add khuyen mai;
+:Nhap thong tin khuyen mai;
+
+fork again
+:Chon khuyen mai;
+:Delete khuyen mai;
+
+fork again
+:Chon khuyen mai;
+:Edit thong tin khuyen mai;
+
+end merge
+if (Valid?) then (Yes)
+:Action done successfully;
+stop
+else (No)
+:Show error message;
+stop
