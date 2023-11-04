@@ -1,0 +1,26 @@
+@startuml
+@startuml Thanhtoan
+
+left to right direction
+
+actor "Actor" as a
+
+
+rectangle "Thanh toan" {
+  usecase "Thanh toan" as UC1
+  usecase "Nhap thong tin ca nhan" as UC2
+  usecase "Xem gio hang" as UC3
+  usecase "Huy gio hang" as UC4
+  usecase "Xem/Sua thong tin gio hang" as UC5
+  
+}
+
+a --> UC1
+UC1 ..> UC2: include
+UC1 ..> UC3: include
+
+UC3 <.. UC4: extend
+UC3 <.. UC5: extend
+
+
+@enduml 

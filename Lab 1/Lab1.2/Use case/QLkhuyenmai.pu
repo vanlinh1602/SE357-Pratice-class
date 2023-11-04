@@ -1,0 +1,27 @@
+@startuml
+@startuml QLkhuyenmai
+left to right direction
+
+actor "Actor" as a
+
+
+rectangle "QL khuyen mai" {
+  usecase "Login" as UC1
+  usecase "Quan ly khuyen mai" as UC2
+  usecase "Xem list cac khuyen mai" as UC3
+  usecase "Them khuyen mai" as UC4
+  usecase "Xoa khuyen mai" as UC5
+  usecase "Sua thong tin khuyen mai" as UC6
+  usecase "Thong tin khuyen mai" as UC7
+}
+
+a --> UC2
+UC2 ..> UC1: include
+UC2 ..> UC3: include
+
+UC2 <.. UC4: extend
+UC2 <.. UC5: extend
+UC2 <.. UC6: extend
+
+UC7 ..> UC3: extend
+@enduml 

@@ -1,10 +1,16 @@
-# What criteria should be used in choosing an appropriate requirements engineering tool?
+# 1.1 Answer the below questions
 
-# Are there any drawbacks to using certain tools in requirements engineering activities?
+## What criteria should be used in choosing an appropriate requirements engineering tool?
+Answer
 
-# When selecting an open-source tool, what characteristics should you look for?
+## Are there any drawbacks to using certain tools in requirements engineering activities?
+Answer
 
-# How can tools enable distributed, global requirements engineering activities? What are the drawbacks in this regard?
+## When selecting an open-source tool, what characteristics should you look for?
+Answer
+
+## How can tools enable distributed, global requirements engineering activities? What are the drawbacks in this regard?
+Answer
 
 # If an environment does not currently engage in solid requirements engineering practices, should tools be introduced?
 

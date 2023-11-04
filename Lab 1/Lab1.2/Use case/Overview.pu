@@ -1,0 +1,48 @@
+@startuml
+@startuml Overview
+left to right direction
+
+actor "Admin" as ad
+actor "Khach hang" as kh 
+actor "Store manager" as sm
+actor "Nhan vien" as nv 
+
+
+rectangle "Pet Supply Store Management" {
+  usecase "Nhap tu nha phan phoi" as UC1
+  usecase "Xuat cho cac cua hang" as UC2
+  usecase "Quan ly nhan vien" as UC3
+  usecase "Quan ly khach hang" as UC4
+  usecase "Quan ly khuyen mai" as UC5
+  usecase "Quan ly cua hang" as UC6
+  usecase "Thanh toan" as UC7
+  usecase "Xem&tim kiem san pham" as UC8
+  usecase "Phan hoi chat luong dich vu" as UC9
+  usecase "Nhap xuat cho cua hang" as UC10
+  usecase "Ban hang" as UC11
+  usecase "In hoa don" as UC12
+  usecase "Xem thong ke doanh thu" as UC13
+}
+
+ad --> UC1
+ad --> UC2
+ad --> UC3
+ad --> UC4
+ad --> UC5
+ad --> UC6
+UC6 <.. UC13 : extend
+
+kh --> UC7
+kh --> UC8
+UC7 <.. UC9 : extend
+
+sm --> UC10
+sm --> UC3
+sm --> UC4
+
+nv --> UC4
+nv --> UC11
+UC11 --> UC12 : include
+
+
+@enduml
