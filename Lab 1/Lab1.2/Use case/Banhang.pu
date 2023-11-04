@@ -1,0 +1,28 @@
+@startuml
+@startuml Banhang
+
+left to right direction
+
+actor "Actor" as a
+
+
+rectangle "Ban hang" {
+  usecase "Login" as UC1
+  usecase "Ban hang" as UC2
+  usecase "Xem list san pham" as UC3
+  usecase "Xuat hoa don" as UC4
+  usecase "Luu thong tin khach hang" as UC5
+  usecase "Tiep nhan voucher/khuyen mai" as UC6
+  usecase "Sap xep cacs san pham" as UC7
+}
+
+a --> UC2
+UC2 ..> UC1: include
+UC2 ..> UC3: include
+
+UC2 <.. UC4: extend
+UC2 <.. UC5: extend
+UC2 <.. UC6: extend
+
+UC7 ..> UC3: extend
+@enduml 

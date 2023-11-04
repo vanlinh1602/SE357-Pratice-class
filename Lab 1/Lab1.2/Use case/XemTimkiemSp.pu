@@ -1,0 +1,29 @@
+@startuml
+@startuml Xem&TimkiemSanpham
+
+left to right direction
+
+actor "Actor" as a
+
+
+rectangle "Xem & Tim kiem san pham" {
+  usecase "Xem list san pham" as UC1
+  usecase "Tim kiem san pham" as UC2
+  usecase "Xem thong tin san pham" as UC3
+  usecase "Hien thi cac muc luc" as UC4
+  usecase "Xem chi tiet san pham" as UC5
+ 
+}
+
+a --> UC1
+UC1 <.. UC2: extend
+UC1 <.. UC5: extend
+UC1 <.. UC4: extend
+
+UC2 ..> UC3: include
+UC2 <.. UC5: extend
+
+UC4 <.. UC5: extend
+
+
+@enduml 
