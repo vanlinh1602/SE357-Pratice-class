@@ -8,20 +8,33 @@ CustomerManageView  --> Database: 1.Get list of customer
 CustomerManageView  --> CustomerManageView : 2.Display list of customer
 Actor --> CustomerManageView : 3.Choose action
 
-opt AddNewStaff:
-    ref over Actor, CustomerManageView , Database: Sequence Insert New customer
+opt AddNewCustomer:
+Actor --> CustomerManageView: Click button add Customer
+CustomerManageView --> Actor: Show form to add Customer
+Actor --> CustomerManageView: Input customer info
+CustomerManageView --> Database: Save customer info
+Database --> CustomerManageView: Add customer successfully
+CustomerManageView --> Actor: Show list of customer
 end   
 
-opt DeleteStaff:
-    ref over Actor, CustomerManageView , Database: Sequence Delete customer
+opt DeleteCustomer:
+Actor --> CustomerManageView: Click button to delete Customer
+CustomerManageView --> Actor: Show form to check if true
+Actor --> CustomerManageView: Click "yes" to confirm
+CustomerManageView --> Database: delete customer
+Database --> CustomerManageView: Delete customer successfully
+CustomerManageView --> Actor: Show list of  remain customer
 end
 
-opt EditStaffInfo:
-    ref over Actor, CustomerManageView , Database: Sequence Edit customer Info
+
+opt EditCustomerInfo:
+Actor --> CustomerManageView: Click button to choose customer
+CustomerManageView --> Actor: Show form to edit customer info
+Actor --> CustomerManageView: Edit info of customer
+CustomerManageView --> Database:  change customer info
+Database --> CustomerManageView: edit customer info successfully
+CustomerManageView --> Actor: Show form of edited customer info
 end   
 
-opt SearchStaff:
-    ref over Actor, CustomerManageView , Database: Sequence Search customer
-end  
 
 @enduml

@@ -9,19 +9,30 @@ StaffManageView --> StaffManageView: 2.Display list of staff
 Actor --> StaffManageView: 3.Choose action
 
 opt AddNewStaff:
-    ref over Actor, StaffManageView, Database: Sequence Insert New Staff
+Actor --> StaffManageView: Click button add Nhanvien
+StaffManageView --> Actor: Show form to add info
+Actor --> StaffManageView: Input nhanvien info
+StaffManageView --> Database: Save nhanvien info
+Database --> StaffManageView: Add nhanvien successfully
+StaffManageView --> Actor: Show list of nhanvien
 end   
 
 opt DeleteStaff:
-    ref over Actor, StaffManageView, Database: Sequence Delete Staff
+Actor --> StaffManageView: Click button to delete Nhanvien
+StaffManageView --> Actor: Show form to check if true
+Actor --> StaffManageView: Click "yes" confirm delete nhanvien
+StaffManageView --> Database: Delete nhanvien action
+Database --> StaffManageView: Delete nhanvien successfully
+StaffManageView --> Actor: Show list of remain nhanvien
 end
 
 opt EditStaffInfo:
-    ref over Actor, StaffManageView, Database: Sequence Edit Staff Info
-end   
-
-opt SearchStaff:
-    ref over Actor, StaffManageView, Database: Sequence Search Staff
-end  
+Actor --> StaffManageView: Click button to choose Nhanvien
+StaffManageView --> Actor: Show form of nhanvien info
+Actor --> StaffManageView: Edit info of nhanvien
+StaffManageView --> Database:  edit nhanvien info action
+Database --> StaffManageView: edit nhanvien info successfully
+StaffManageView --> Actor: Show form of edited info
+end
 
 @enduml

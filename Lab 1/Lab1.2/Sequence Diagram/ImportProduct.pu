@@ -22,7 +22,6 @@ alt Click "Yes" Button
     else Invalid Information
         ProductControl -> ProductManageView: 17. Send error message
         ProductManageView -> ProductManageView: 18. Show error notification
-
     end
 else Click "No" Button
     ProductManageView -> ProductManageView: 19. Show notification

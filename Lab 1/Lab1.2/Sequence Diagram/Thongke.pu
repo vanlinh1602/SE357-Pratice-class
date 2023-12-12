@@ -8,17 +8,23 @@ StatisticView  --> Database: 1.Get overal statistic
 StatisticView  --> StatisticView : 2.Display statistic banner
 Actor --> StatisticView : 3.Choose style to see statistic
 
-opt FilterStatisticbyName:
-    ref over Actor, StatisticView , Database: Sequence Insert New customer
+opt FilterStatisticbyNameandTime:
+Actor --> StatisticView: Click button filter by name
+StatisticView --> Database:Get data with requirement
+Database --> StatisticView: return filter successfully noti
+StatisticView --> Actor: Show list of sorted info
 end   
 
 opt CompareStatistic:
-    ref over Actor, StatisticView , Database: Sequence Delete customer
+Actor --> StatisticView: Click button compare info
+StatisticView --> Actor: show form of info
+Actor --> StatisticView: Choose 2 data want to sort
+StatisticView --> Database:Get data with requirement
+Database --> StatisticView: return filter successfully noti
+StatisticView --> Actor: Show comparison form
 end
 
-opt ShowStatisticbyTime:
-    ref over Actor, StatisticView , Database: Sequence Edit customer Info
-end   
+ 
  
 
 @enduml
