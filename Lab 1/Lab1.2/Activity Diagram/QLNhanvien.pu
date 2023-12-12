@@ -3,6 +3,7 @@
 start
 :Login;
 :Quan ly nhan vien;
+repeat
 :Xem list nhan vien;
 fork
 :Add nhan vien;
@@ -22,4 +23,3 @@ if (Valid?) then (Yes)
 stop
 else (No)
 :Show error message;
-stop

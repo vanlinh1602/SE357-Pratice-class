@@ -3,6 +3,7 @@
 start
 :Login;
 :Thong ke doanh thu;
+repeat
 :Xem bang thong ke tong;
 fork
 :Chon noi dung muon thong ke;
@@ -24,4 +25,3 @@ if (Valid?) then (Yes)
 stop
 else (No)
 :Show error message;
-stop

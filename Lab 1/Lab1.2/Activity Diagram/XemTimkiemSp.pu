@@ -3,15 +3,16 @@
 
 start
 :Vao screen Home;
+repeat
 :Xem san pham;
 if (Tim kiem san pham?) then (Yes)
 :Vao thanh search;
 :Nhap ten/ma sp;
 if (Ton tai sp?) then (Co)
 :Xem chi tiet san pham;
-else (Khong co)
-:Khong ton tai san pham;
-endif
 stop
+else (Khong co)
+:Thong bao khong ton tai san pham;
+endif
 else (No)
 stop

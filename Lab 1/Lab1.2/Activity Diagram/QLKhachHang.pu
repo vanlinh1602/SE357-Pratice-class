@@ -3,6 +3,7 @@
 start
 :Login;
 :Quan ly khach hang;
+repeat
 :Xem list khach hang;
 fork
 :Add khach hang;
@@ -22,4 +23,3 @@ if (Valid?) then (Yes)
 stop
 else (No)
 :Show error message;
-stop

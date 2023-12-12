@@ -3,6 +3,7 @@
 start
 :Login;
 :Quan ly khuyen mai;
+repeat
 :Xem list khuyen mai;
 fork
 :Add khuyen mai;
@@ -22,4 +23,3 @@ if (Valid?) then (Yes)
 stop
 else (No)
 :Show error message;
-stop

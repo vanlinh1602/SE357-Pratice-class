@@ -2,6 +2,7 @@
 
 start
 :Vao gio hang;
+repeat
 :Xem gio hang;
 
 fork
@@ -17,4 +18,3 @@ if (Valid?) then (Yes)
 stop
 else (No)
 :Show error message;
-stop

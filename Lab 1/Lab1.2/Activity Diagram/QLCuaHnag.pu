@@ -3,6 +3,7 @@
 start
 :Login;
 :Quan ly cua hang;
+repeat
 :Xem list cua hang;
 fork
 :Add cua hang;
@@ -22,4 +23,3 @@ if (Valid?) then (Yes)
 stop
 else (No)
 :Show error message;
-stop
